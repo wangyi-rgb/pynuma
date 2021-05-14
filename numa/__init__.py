@@ -111,4 +111,7 @@ from . import memory
 from . import schedule
 from . import info
 
+if LIBNUMA.numa_available() == -1:
+    raise Exception("numa is not supported!")
+
 __all__ = ["info", "memory", "schedule", "LIBNUMA", "bitmask_t"]
